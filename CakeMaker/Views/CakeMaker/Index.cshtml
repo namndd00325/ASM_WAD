@@ -1,0 +1,83 @@
+﻿@model IEnumerable<CakeMaker.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--  start-wrap -->
+<div class="wrap">
+    <!--image-slider-->
+    <div id="slideshow">
+        <ul>
+            <li>
+                <img src="~/Content/images/slide2.jpg" alt="" title="Lorem ipsum dolor sit amet. " />
+            </li>
+
+            <li>
+                <img src="~/Content/images/slide1.jpg" alt="" title="labore et dolore magna aliqua. " />
+            </li>
+
+            <li>
+                <img src="~/Content/images/slide3.jpg" alt="" title="labore et dolore magna aliqua. " />
+            </li>
+
+            <li>
+                <img src="~/Content/images/slide2.jpg" alt="" title="Lorem ipsum dolor sit amet. " />
+            </li>
+
+            <li>
+                <img src="~/Content/images/slide1.jpg" alt="" title="Lorem ipsum dolor sit ametsed do eiusmod tempor . " />
+            </li>
+        </ul>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script src="~/Content/js/craftyslide.min.js"></script>
+
+    <script>$("#slideshow").craftyslide();</script>
+    <div class="clear"> </div>
+    <!--End-image-slider-->
+    <!--banner-->
+    <div class="banner">
+        <div class="banner-grid">
+            <ul>
+                <li><h2>Welcome to our website</h2></li>
+                <li>
+                    <p>Website CakeMaker provode you order your favorite cake easier</p>
+                </li>
+                <li><a href="/CakeMaker/AllProduct">Order Now</a></li>
+                <div class="clear"> </div>
+            </ul>
+        </div>
+    </div>
+    <div class="clear"> </div>
+    <!--banner-end-->
+    <div class="clear"> </div>
+    <!--content-grids-->
+    <div class="content-grids home-content">
+        @foreach (var item in Model)
+        {
+            <div class="row content-grid">
+                <div class="col-md-3">
+                    <img src="@Html.DisplayFor(modelItem => item.Image)" alt="Cake Image" class="left clear" width="230px" />
+                </div>
+                <div class="col-md-9">
+                    <h2>@Html.DisplayFor(modelItem => item.Name)</h2>
+                    <p>@Html.DisplayFor(modelItem => item.Description)</p>
+                </div>
+            </div>
+            <br />
+            <hr style="width:90%;font-weight:bold;"/>
+            <br />
+
+        }
+
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="copy-right">
+        <p>© 2013 Bakery. All rights Reserved | Design by <a href="http://w3layouts.com/">W3Layouts</a></p>
+    </div>
+</div>
